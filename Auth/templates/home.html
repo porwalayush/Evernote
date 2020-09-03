@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME</title>
+</head>
+<body>
+{% if user.is_authenticated  %}
+    Welcome {{user.username}}
+    <form method="POST" action="{% url 'logoutuser' %}">
+        {% csrf_token %}
+        <button type="submit">logout</button>
+    </form>
+{% else %}
+<a href={% url 'signupuser' %}><button>signup</button></a>
+<a href={% url 'login' %}><button>login</button></a>
+{% endif %}
+</body>
+</html>
