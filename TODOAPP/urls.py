@@ -18,9 +18,11 @@ from django.urls import path ,include
 from Auth import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',views.home,name='home' ),
     path('signup/',views.signupuser,name='signupuser'),
     path('account/logout/',views.logoutuser,name='logoutuser'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/profile/',views.home,name='home' ),
+    path('create/',views.createtodo, name='createtodo')
 ]
 

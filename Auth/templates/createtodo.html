@@ -1,0 +1,18 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Create Todo</title>
+</head>
+<body>
+<div class="container">
+<form method="POST" action="">
+    {% csrf_token %}
+    {{todoform|crispy}}
+    <button value="submit" class="btn btn-success">create todo</button>
+</form>
+</div>
+</body>
+</html>
